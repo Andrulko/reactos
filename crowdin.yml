@@ -1,5 +1,4 @@
-preserve_hierarchy : true
+preserve_hierarchy: true
 files:
   - source: en-US.rc
-
-    translation: '/%original_path%/%locale%.rc'
+    translation: /%original_path%/%locale%.rc
