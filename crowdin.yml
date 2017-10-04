@@ -1,4 +1,4 @@
 preserve_hierarchy: true
 files:
-  - source: en-US.rc
+  - source: /**/en-US.rc #import all en-US.rc files which are stored in any folder across the repo
     translation: /%original_path%/%locale%.rc
