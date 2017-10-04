@@ -3568,6 +3568,12 @@ char * CDECL gets(char *buf)
 
   *buf = '\0';
 
+  if ((cc == EOF) && (buf == buf_start)) /* If nothing read, return 0*/
+  {
+    _unlock_file(stdin);
+    return NULL;
+  }
+  
   TRACE("got '%s'\n", buf_start);
   _unlock_file(stdin);
   return buf_start;
@@ -3589,6 +3595,13 @@ wchar_t* CDECL _getws(wchar_t* buf)
             *buf++ = (wchar_t)cc;
     }
     *buf = '\0';
+
+    if ((cc == WEOF) && (buf == ws)) /* If nothing read, return 0*/
+    {
+        TRACE(":nothing read\n");
+        _unlock_file(stdin);
+        return NULL;
+    }
 
     TRACE("got %s\n", debugstr_w(ws));
     _unlock_file(stdin);
