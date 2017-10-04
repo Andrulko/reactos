@@ -1,3 +1,0 @@
-files:
-  - source: en-US.rc
-    translation: '%original_path%/%locale%.rc'
