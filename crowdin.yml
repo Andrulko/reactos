@@ -1,0 +1,6 @@
+files:
+  - source: '*.rc'
+    translation: '%two_letters_code%-%locale%'
+    languages_mapping:
+      locale:
+        en: en-US
